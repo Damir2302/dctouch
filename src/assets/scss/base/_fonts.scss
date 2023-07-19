@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('../fonts/TimesNewRomanPSMT.eot');
+  src: url('../fonts/TimesNewRomanPSMT.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/TimesNewRomanPSMT.woff') format('woff'),
+  url('../fonts/TimesNewRomanPSMT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('../fonts/SFProDisplay-Light.woff2') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('../fonts/SFProDisplay-Regular.woff2') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+$times: 'Times New Roman';
+
+body {
+  font-family: 'SFProDisplay';
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 133.333%;
+  color: #fff;
+
+  @include breakpoint(hd) {
+    font-size: 20px;
+  }
+}
+

@@ -1,0 +1,20 @@
+mixin breadcrumbs(...items)
+
+    .breadcrumbs
+
+        .container
+
+            .breadcrumbs-wrapper
+
+                .breadcrumbs-item
+                    a(href='/') Главная
+
+                each item in items
+
+                    if item == items[items.length - 1]
+                        .breadcrumbs-item
+                            span= item
+
+                    else
+                        .breadcrumbs-item
+                            a(href="#")= item

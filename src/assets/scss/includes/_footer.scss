@@ -1,0 +1,322 @@
+.footer {
+    padding: 40px 0 14px;
+    background: #F2F2F2;
+
+    @include breakpoint(md) {
+        padding: 40px 0 20px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 60px 0 100px;
+    }
+}
+
+.footer__inner {
+
+    @include breakpoint(lg) {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.footer__logo {
+    display: inline-block;
+
+    @include breakpoint(xl) {
+        width: calc(100% / 12 * 5 - 20px);
+    }
+}
+
+.footer__logo a {
+    display: flex;
+    width: max-content;
+}
+
+.footer__logo-img {
+    width: 50px;
+    height: 50px;
+
+    @include breakpoint(md) {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.footer__logo-label p {
+    margin-left: 8px;
+    display: flex;
+    filter: brightness(0) saturate(100%)
+}
+
+.footer__logo-label p:first-child {
+    width: 72px;
+    height: 16px;
+
+    @include breakpoint(md) {
+        width: 62px;
+    }
+}
+
+.footer__logo-label p:last-child {
+    width: 186px;
+    height: 36px;
+
+    @include breakpoint(md) {
+        width: 160px;
+        height: 25px;
+    }
+}
+
+.footer__wrapper {
+
+    @include breakpoint(md) {
+        padding: 30px 0 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(lg) {
+        padding: 0;
+        width: calc(100% / 12 * 9);
+    }
+
+    @include breakpoint(xl) {
+        width: calc(100% / 12  * 7 - 20px);
+    }
+}
+
+.footer__menu {
+    padding: 40px 0;
+
+    @include breakpoint(md) {
+        padding: 0;
+        flex-shrink: 0;
+        width: 450px;
+    }
+
+    @include breakpoint(lg) {
+        width: calc(100% / 9 * 5 - 15px);
+    }
+
+    @include breakpoint(xl) {
+        width: calc(100% / 7 * 4 - 20px);
+    }
+}
+
+.footer__menu ul {
+    margin-top: -12px;
+    margin-left: -16px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 272px;
+
+    @include breakpoint(md) {
+        margin-left: -20px;
+    }
+
+    @include breakpoint(lg) {
+        height: 264px;
+    }
+}
+
+.footer__menu ul li {
+    margin-top: 12px;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    width: calc(50% - 16px);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+        margin-left: 20px;
+        max-width: 170px;
+    }
+}
+
+.footer__menu ul li::before {
+    content: '';
+    margin-right: 20px;
+    background:#FFF;
+    flex-shrink: 0;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.footer__info {
+    padding-bottom: 20px;
+
+    @include breakpoint(md) {
+        width: 32%;
+        max-width: 425px;
+    }
+
+    @include breakpoint(lg) {
+        padding-bottom: 0;
+        width: calc(100% / 9 * 4 - 15px);
+    }
+
+    @include breakpoint(xl) {
+        width: calc(100% / 7 * 3 - 20px);
+    }
+}
+
+.footer__socials {
+    margin-bottom: 40px;
+
+    @include breakpoint(md) {
+        margin-bottom: 30px;
+    }
+}
+
+.footer__socials ul {
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint(md) {
+        justify-content: unset;
+    }
+}
+
+.footer__socials ul li {
+    width: 20px;
+    height: 20px;
+}
+
+.footer__socials ul li ~ li {
+    margin-left: 14px;
+}
+
+.footer__socials ul li img {
+    vertical-align: unset;
+}
+
+.footer__info-row {
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.footer__info-row p {
+    width: 50%;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+        margin-right: 10px;
+        width: auto;
+    }
+}
+
+.footer__info-row p:last-child {
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.footer__info-address {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(md) {
+        margin-top: 30px;
+        align-items: unset;
+    }
+
+    @include breakpoint(xl) {
+        max-width: 215px;
+    }
+}
+
+.footer__info-address::before {
+    content: '';
+    margin-right: 20px;
+    background: url('../images/placemark-orange.svg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-shrink: 0;
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+
+    @include breakpoint(md) {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.footer__info-address p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 150%;
+    color: #000;
+}
+
+.footer__info-address a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.footer__bottom {
+    padding: 20px 0 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 150%;
+    color: #7C7B7B;
+    border-top: 1px solid #E1E1E1;
+
+    @include breakpoint(md) {
+        padding: 20px 0;
+    }
+
+    @include breakpoint(lg) {
+        padding: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 158px;
+        border-top: 0;
+    }
+}
+
+.footer__policy,
+.footer__copyright {
+    
+    @include breakpointMax(lg) {
+        width: 50%;
+        max-width: max-content;
+    }
+}
+
+.footer__copyright {
+
+    @include breakpoint(lg) {
+        margin: 10px 0;
+    }
+}
+
+.footer__dev {
+    
+    @include breakpointMax(md) {
+        margin-top: 14px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.footer__dev span {
+    margin-left: 5px;
+    display: inline-block;
+    color: #2B2A29;
+}
