@@ -47,8 +47,4 @@ $(document).ready(function() {
         $(this).closest('#menu').toggleClass('active')
     })
 
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('allow', 'fullscreen'); 
-    iframe.setAttribute('allowFullScreen', '');
-
 })
