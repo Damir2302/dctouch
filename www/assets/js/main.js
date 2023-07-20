@@ -32,14 +32,9 @@ $(document).ready(function() {
     if ($(window).width() >= 1200) {
         const pageSlider = new Swiper('.main-swiper', {
             slidesPerView: "auto",
-            freeMode: {
-                enabled: true,
-                sticky: false,
-                momentumBounce: false,
-            },
+            freeMode: true,
             mousewheel: {
-                enabled: true,
-                sensitivity: 4,
+                sensitivity: 5
             },
             keyboard: {
                 enabled: true,
