@@ -102,8 +102,8 @@ main .swiper {
 
     @include breakpoint(xl) {
         display: flex;
-        // transition-duration: .8s!important;
-        // transition-timing-function: ease-out;
+        transition-duration: .8s!important;
+        transition-timing-function: ease-out;
     }
 }
 
