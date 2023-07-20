@@ -30,17 +30,25 @@ $(document).ready(function() {
     })
 
     if ($(window).width() >= 1200) {
-        const pageSlider = new Swiper('#main .swiper', {
+        const pageSlider = new Swiper('.main-swiper', {
             slidesPerView: "auto",
             freeMode: true,
             mousewheel: {
-                sensitivity: 3
+                sensitivity: 5
             },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false
+            }
         })
     }
 
     $('#openMenu').on('click', function() {
         $(this).closest('#menu').toggleClass('active')
     })
+
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('allow', 'fullscreen'); 
+    iframe.setAttribute('allowFullScreen', '');
 
 })
