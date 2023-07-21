@@ -232,6 +232,7 @@ function cleancss(cb) {
 function jsPlugins(cb) {
 	return gulp.src([
         pathTo.resolve('node_modules', 'jquery/*/jquery.min.js'),
+        pathTo.resolve('node_modules', 'locomotive-scroll/dist/locomotive-scroll.min.js'),
         pathTo.resolve('node_modules', 'swiper/swiper-bundle.min.js')
 	])
     .pipe(plumber({
