@@ -57,4 +57,5 @@
   "dependencies": {
     "jscrollpane": "^2.2.3-rc.2",
     "locomotive-scroll": "^4.1.4"
+  }
 }

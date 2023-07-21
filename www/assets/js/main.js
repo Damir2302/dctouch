@@ -13,6 +13,14 @@ $(document).ready(function() {
         })
     }
 
+    document.getElementById('jump-to-menu').addEventListener("click", function() {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        })
+    })
+
     $('.play-icon').on('click', function() {
         $(this).addClass('hidden')
         $(this).parent().find('.video-img').addClass('hidden')
@@ -29,22 +37,18 @@ $(document).ready(function() {
         },
     })
 
-    if ($(window).width() >= 1200) {
-        const pageSlider = new Swiper('.main-swiper', {
-            slidesPerView: "auto",
-            freeMode: true,
-            mousewheel: {
-                sensitivity: 5
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: false
-            }
-        })
-    }
-
     $('#openMenu').on('click', function() {
         $(this).closest('#menu').toggleClass('active')
     })
+
+    if ($(window).width() >= 1200) {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true,
+            direction: 'horizontal',
+            multiplier: 0.75,
+            scrollFromAnywhere: true,
+        })
+    }
 
 })
