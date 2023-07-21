@@ -1596,7 +1596,6 @@ section {
 
 @media(min-width: 1200px) {
     .wrapper {
-        padding-right: 12vw;
         position: relative;
         display: -webkit-box;
         display: -ms-flexbox;

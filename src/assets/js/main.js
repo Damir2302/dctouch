@@ -46,8 +46,6 @@ $(document).ready(function() {
             el: document.querySelector('[data-scroll-container]'),
             smooth: true,
             direction: 'horizontal',
-            multiplier: 0.75,
-            scrollFromAnywhere: true,
         })
     }
 
