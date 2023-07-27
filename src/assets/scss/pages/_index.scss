@@ -43,7 +43,7 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 96px;
+        width: 80px;
         height: 100%;
         max-height: 100vh;
         transition: all .3s ease;
@@ -98,7 +98,7 @@ section {
 }
 
 .menu .menu-right {
-    padding: 0 24px;
+    padding: 0 16px;
     text-align: center;
     cursor: pointer;
 }
@@ -566,4 +566,17 @@ section.reverse {
 
 .contacts-row p {
     color: #B6ABAF;
+}
+
+.section-gray {
+    background-color: #231f1f;
+}
+
+.section-dark {
+    background-color: #191919;
+}
+
+.section-gray *:not(.section-subtitle),
+.section-dark *:not(.section-subtitle) {
+    color: #b6abaf;
 }
