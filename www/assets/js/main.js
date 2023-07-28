@@ -1,18 +1,5 @@
 $(document).ready(function() {
 
-    // let anchors = document.querySelectorAll('.js-anchor')
-    // if (anchors.length > 0) {
-    //     anchors.forEach(anchor => {
-    //         anchor.onclick = function (e) {
-    //             e.preventDefault();
-    //             document.querySelector(`#${anchor.href.split('#')[1]}`).scrollIntoView({
-    //                 block: 'nearest',
-    //                 behavior: 'smooth',
-    //             })
-    //         }
-    //     })
-    // }
-
     $('.play-icon').on('click', function() {
         $(this).addClass('hidden')
         $(this).parent().find('.video-img').addClass('hidden')
@@ -41,13 +28,33 @@ $(document).ready(function() {
             smooth: true,
             direction: 'horizontal',
             reloadOnContextChange: true,
-        });
+        })
+
+        scroll.tablet.breakpoint = 1200
+
+        scroll.on('scroll', function({scroll}) {
+
+            if (scroll.x < 80) {
+                $('#jump-to-menu').removeClass('fixed')
+            } else {
+                $('#jump-to-menu').addClass('fixed')
+            }
+        })
+
+        $('#jump-to-menu').on('click', function() {
+            scroll.scrollTo(0, 0)
+        })
+
+        $('.js-anchor').on('click', function(e) {
+            e.preventDefault()
+            scroll.scrollTo(document.querySelector(`${e.target.getAttribute('href')}`))
+        })
     }
 
     function destroyScroll() {
         if (scroll) {
-            scroll.destroy();
-            scroll = null;
+            scroll.destroy()
+            scroll = null
         }
     }
 
@@ -55,9 +62,9 @@ $(document).ready(function() {
         const screenWidth = $(window).width();
 
         if (screenWidth >= 1200) {
-            initScroll();
+            initScroll()
         } else {
-            destroyScroll();
+            destroyScroll()
         }
     }
 
@@ -65,11 +72,20 @@ $(document).ready(function() {
     toggleScroll()
 
     // Включение или отключение плагина при изменении размера экрана
-    window.addEventListener('resize', toggleScroll);
+    window.addEventListener('resize', toggleScroll)
 
-    $('.js-anchor').on('click', function(e) {
-        e.preventDefault()
-        scroll.scrollTo(document.querySelector('#form'))
+    function scrollToTop() {
+        if ($(window).width() < 1200) {
+            $('#jump-to-menu').on('click', function() {
+                $(window).scrollTop(0)
+            })
+        }
+    }
+
+    scrollToTop()
+
+    $(window).on('resize', function() {
+        scrollToTop()
     })
 
 })

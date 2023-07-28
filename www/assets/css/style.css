@@ -353,7 +353,8 @@ main {
 }
 
 #page {
-    position: relative
+    position: relative;
+    min-width: 360px
 }
 
 .section-subtitle {
@@ -369,6 +370,10 @@ main {
     .section-subtitle {
         font-size: 16px
     }
+}
+
+.section-subtitle~.section-subtitle {
+    margin-top: 30px
 }
 
 .video {
@@ -539,7 +544,7 @@ ul li~li {
 @media(min-width: 1200px) {
     .section-text {
         font-size: 20px;
-        line-height: 1
+        line-height: 1.2
     }
 }
 
@@ -1450,22 +1455,31 @@ button.swiper-pagination-bullet {
 }
 
 #jump-to-menu {
-    display: none
+    background-image: url("../images/menu_logo.webp");
+    background-size: 100% 100%;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 46px;
+    height: 28px;
+    z-index: 50;
+    cursor: pointer
 }
 
 @media(min-width: 1024px) {
     #jump-to-menu {
-        background-image: url("../images/menu_logo.webp");
         position: fixed;
-        top: calc(50% - 12px);
-        left: 20px;
-        display: block;
-        width: 42px;
-        height: 24px;
-        background-size: 100% 100%;
-        z-index: 50;
-        cursor: pointer
+        top: calc(50% - 28px);
+        left: 16px;
+        right: unset;
+        display: none;
+        width: 46px;
+        height: 28px
     }
+}
+
+#jump-to-menu.fixed {
+    display: block
 }
 
 @media(min-width: 1200px) {
@@ -1607,6 +1621,18 @@ section {
 @media(min-width: 1920px) {
     .wrapper {
         width: 20550px
+    }
+}
+
+@media(min-width: 1200px) {
+    .wrapper.second-page {
+        width: 10000px
+    }
+}
+
+@media(min-width: 1920px) {
+    .wrapper.second-page {
+        width: 12000px
     }
 }
 
@@ -2121,4 +2147,33 @@ section {
 
 .section-gray *:not(.section-subtitle),.section-dark *:not(.section-subtitle) {
     color: #b6abaf
+}
+
+.section-gray *:not(.section-subtitle) a:hover,.section-dark *:not(.section-subtitle) a:hover {
+    color: #fff
+}
+
+@media(min-width: 1200px) {
+    .section-custom {
+        max-width: 410px
+    }
+}
+
+@media(min-width: 1920px) {
+    .section-custom {
+        max-width: 535px
+    }
+}
+
+@media(min-width: 1200px) {
+    .custom-section .section-top {
+        margin-top: auto;
+        max-width: 420px
+    }
+}
+
+@media(min-width: 1920px) {
+    .custom-section .section-top {
+        max-width: 575px
+    }
 }

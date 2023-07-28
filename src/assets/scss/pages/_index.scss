@@ -1,18 +1,27 @@
 #jump-to-menu {
-    display: none;
+    background-image: url('../images/menu_logo.webp');
+    background-size: 100% 100%;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 46px;
+    height: 28px;
+    z-index: 50;
+    cursor: pointer;
 
     @include breakpoint(lg) {
-        background-image: url('../images/menu_logo.webp');
         position: fixed;
-        top: calc(50% - 12px);
-        left: 20px;
-        display: block;
-        width: 42px;
-        height: 24px;
-        background-size: 100% 100%;
-        z-index: 50;
-        cursor: pointer;
+        top: calc(50% - 28px);
+        left: 16px;
+        right: unset;
+        display: none;
+        width: 46px;
+        height: 28px;
     }
+}
+
+#jump-to-menu.fixed {
+    display: block;
 }
 
 main {
