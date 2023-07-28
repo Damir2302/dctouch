@@ -2110,3 +2110,15 @@ section {
 .contacts-row p {
     color: #b6abaf
 }
+
+.section-gray {
+    background-color: #231f1f
+}
+
+.section-dark {
+    background-color: #191919
+}
+
+.section-gray *:not(.section-subtitle),.section-dark *:not(.section-subtitle) {
+    color: #b6abaf
+}

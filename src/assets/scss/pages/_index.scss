@@ -133,6 +133,17 @@ section {
     }
 }
 
+.wrapper.second-page {
+
+    @include breakpoint(xl) {
+        width: 10000px;
+    }
+
+    @include breakpoint(hd) {
+        width: 12000px;
+    }
+}
+
 .section-first {
     padding: 0 30px 100px;
     background-position: top left;
@@ -579,4 +590,32 @@ section.reverse {
 .section-gray *:not(.section-subtitle),
 .section-dark *:not(.section-subtitle) {
     color: #b6abaf;
+}
+
+.section-gray *:not(.section-subtitle)a:hover,
+.section-dark *:not(.section-subtitle)a:hover {
+    color: #fff;
+}
+
+.section-custom {
+
+    @include breakpoint(xl) {
+        max-width: 410px;
+    }
+
+    @include breakpoint(hd) {
+        max-width: 535px;
+    }
+}
+
+.custom-section .section-top {
+
+    @include breakpoint(xl) {
+        margin-top: auto;
+        max-width: 420px;
+    }
+
+    @include breakpoint(hd) {
+        max-width: 575px;
+    }
 }
