@@ -357,6 +357,62 @@ main {
     min-width: 360px
 }
 
+.arrow-up {
+    display: none
+}
+
+@media(min-width: 1200px) {
+    .arrow-up {
+        position: fixed;
+        bottom: 100px;
+        left: 121px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 18px;
+        -webkit-animation: .6s ease-in-out infinite alternate arrowUp;
+        animation: .6s ease-in-out infinite alternate arrowUp;
+        z-index: 10;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none
+    }
+}
+
+@media(min-width: 1920px) {
+    .arrow-up {
+        left: 128px
+    }
+}
+
+@-webkit-keyframes arrowUp {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    100% {
+        -webkit-transform: translateX(-0.4em);
+        transform: translateX(-0.4em)
+    }
+}
+
+@keyframes arrowUp {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    100% {
+        -webkit-transform: translateX(-0.4em);
+        transform: translateX(-0.4em)
+    }
+}
+
 .section-subtitle {
     margin-bottom: 25px;
     font-size: 12px;
@@ -391,6 +447,17 @@ main {
     .video {
         height: 100%
     }
+}
+
+.video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1
 }
 
 .video iframe {
@@ -555,6 +622,20 @@ ul li~li {
     }
 }
 
+.js-anchor {
+    position: relative
+}
+
+.js-anchor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
 .anchor-link {
     margin-top: 15px;
     font-size: 12px;
@@ -573,7 +654,7 @@ ul li~li {
     }
 }
 
-.anchor-link:hover {
+.js-anchor:hover .anchor-link {
     color: #fdff07
 }
 
@@ -609,6 +690,26 @@ ul li~li {
 .swiper-nav {
     --swiper-navigation-size: 32px;
     --swiper-theme-color: #fff
+}
+
+.swiper-nav .swiper-button-next,.swiper-button-prev {
+    padding: 32px 24px;
+    background-color: rgba(0,0,0,.1);
+    opacity: .6;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease
+}
+
+.swiper-nav .swiper-button-prev {
+    left: 0
+}
+
+.swiper-nav .swiper-button-next {
+    right: 0
+}
+
+.swiper-nav .swiper-button-prev:hover,.swiper-nav .swiper-button-next:hover {
+    opacity: 1
 }
 
 .text-label {
@@ -1613,26 +1714,26 @@ section {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        width: 15000px;
+        width: 14800px;
         height: 100%
     }
 }
 
 @media(min-width: 1920px) {
     .wrapper {
-        width: 20550px
+        width: 20200px
     }
 }
 
 @media(min-width: 1200px) {
     .wrapper.second-page {
-        width: 10000px
+        width: 10700px
     }
 }
 
 @media(min-width: 1920px) {
     .wrapper.second-page {
-        width: 12000px
+        width: 13950px
     }
 }
 
@@ -1779,7 +1880,7 @@ section {
 @media(min-width: 1200px) {
     .form {
         padding: 44px 64px;
-        max-width: 546px
+        max-width: 375px
     }
 }
 
@@ -2016,8 +2117,7 @@ section {
 @media(min-width: 1200px) {
     .video-section .present .section-top {
         top: 85px;
-        right: 65px;
-        left: unset
+        left: 65px
     }
 }
 
@@ -2104,6 +2204,7 @@ section {
 }
 
 .contacts {
+    background: #000;
     padding: 50px 30px
 }
 
@@ -2153,6 +2254,14 @@ section {
     color: #fff
 }
 
+@media(min-width: 744px)and (max-width: 1199px) {
+    .section-custom {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+}
+
 @media(min-width: 1200px) {
     .section-custom {
         max-width: 410px
@@ -2163,6 +2272,19 @@ section {
     .section-custom {
         max-width: 535px
     }
+}
+
+@media(min-width: 1200px) {
+    .section-custom .image,.section-custom .contant-text {
+        height: 50%
+    }
+}
+
+.section-custom .image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
 }
 
 @media(min-width: 1200px) {
