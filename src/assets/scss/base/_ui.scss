@@ -81,6 +81,35 @@ main {
 
 }
 
+.arrow-up {
+  display: none;
+
+  @include breakpoint(xl) {
+    position: fixed;
+    bottom: 100px;
+    left: 121px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    animation: .6s ease-in-out infinite alternate arrowUp;
+    z-index: 10;
+    user-select: none;
+  }
+
+  @include breakpoint(hd) {
+    left: 128px;
+  }
+}
+
+@keyframes arrowUp {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-0.4em);
+  }
+}
+
 .section-subtitle {
   margin-bottom: 25px;
   font-size: 12px;
@@ -109,6 +138,17 @@ main {
   @include breakpoint(xl) {
     height: 100%;
   }
+}
+
+.video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .video iframe {
@@ -245,6 +285,20 @@ ul li ~ li {
   }
 }
 
+.js-anchor {
+  position: relative;
+}
+
+.js-anchor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .anchor-link {
   margin-top: 15px;
   font-size: 12px;
@@ -260,7 +314,7 @@ ul li ~ li {
   }
 }
 
-.anchor-link:hover {
+.js-anchor:hover .anchor-link {
   color: #FDFF07;
 }
 
@@ -292,6 +346,26 @@ ul li ~ li {
 .swiper-nav {
   --swiper-navigation-size: 32px;
   --swiper-theme-color: #fff;
+}
+
+.swiper-nav .swiper-button-next, .swiper-button-prev {
+  padding: 32px 24px;
+  background-color: rgba(0,0,0,0.1);
+  opacity: 0.6;
+  transition: opacity .3s ease;
+}
+
+.swiper-nav .swiper-button-prev {
+  left: 0;
+}
+
+.swiper-nav .swiper-button-next {
+  right: 0;
+}
+
+.swiper-nav .swiper-button-prev:hover,
+.swiper-nav .swiper-button-next:hover {
+  opacity: 1;
 }
 
 .text-label {

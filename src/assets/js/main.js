@@ -34,6 +34,12 @@ $(document).ready(function() {
 
         scroll.on('scroll', function({scroll}) {
 
+            if (scroll.x > 0.6 ) {
+                $('#arrow').fadeOut()
+            } else {
+                $('#arrow').fadeIn()
+            }
+
             if (scroll.x < 80) {
                 $('#jump-to-menu').removeClass('fixed')
             } else {
