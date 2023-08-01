@@ -264,7 +264,7 @@ section {
     background: #000;
 
     @include breakpoint(xl) {
-        padding: 44px 64px;
+        padding: 44px 60px;
         max-width: 375px;
     }
 
@@ -397,7 +397,6 @@ section {
 .error_text, .error_text-email, .info {
     margin-top: 10px;
     margin-bottom: 25px;
-    width: 80%;
     font-size: 13px;
     line-height: 20px;
 }
@@ -406,7 +405,13 @@ section {
     color: #fff;
 }
 
+.form_button.dis {
+    background: gray;
+    cursor: no-drop;
+}
+
 .error_text, .error_text-email {
+    font-weight: 600;
     color: #ce0624;
 }
 

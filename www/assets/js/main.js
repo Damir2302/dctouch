@@ -47,13 +47,23 @@ $(document).ready(function() {
             }
         })
 
+        scroll.update()
+
         $('#jump-to-menu').on('click', function() {
             scroll.scrollTo(0, 0)
         })
 
         $('.js-anchor').on('click', function(e) {
             e.preventDefault()
-            scroll.scrollTo(document.querySelector(`${e.target.getAttribute('href')}`))
+
+            let targetElement
+            targetElement = document.querySelector(`${e.target.getAttribute('href')}`)
+
+            const targetOffset = targetElement.offsetLeft;
+            const targetWidth = targetElement.offsetWidth;
+            const windowWidth = window.innerWidth;
+
+            scroll.scrollTo(targetOffset - (windowWidth / 2) + (targetWidth / 2))
         })
     }
 

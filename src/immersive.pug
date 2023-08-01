@@ -100,7 +100,7 @@ block main
                 .video
                     .video-img
                         img(src="assets/images/immersive/img-235235.webp", alt="Интерактивный медиа фасад")
-                    iframe(title="Интерактивная витрина" loading="lazy" src="https://vk.com/video-34832376_456239092" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
+                    iframe(title="Интерактивная витрина" loading="lazy" src="https://vk.com/video_ext.php?oid=-34832376&id=456239092&hash=0ccf2bfb609067a6&hd=2&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                     .play-icon
 
         section.text-image-section
@@ -113,7 +113,7 @@ block main
             .video
                 .video-img
                     img(src="assets/images/immersive/img-23536.webp", alt="Мультимедийная витрина")
-                iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/366068068?h=299a9aeeaf&autoplay=1&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
+                iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/366068068?muted=1&autoplay=1&h=299a9aeeaf&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                 .play-icon
 
         section.text-section
@@ -207,10 +207,10 @@ block main
                     .section-title Музеи и выставки
                     .section-text Иммерсивные / генеративные решения
 
-                .video
+                .video.custom-1
                     .video-img
                         img(src="assets/images/immersive/img-3252352.webp", alt="Интерактивный медиа фасад")
-                    iframe(title="Интерактивная витрина" loading="lazy" src="https://player.vimeo.com/video/321046681?h=0a0812fa5e&autoplay=1&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
+                    iframe(title="Интерактивная витрина" loading="lazy" src="https://player.vimeo.com/video/321046681?muted=1&autoplay=1&h=0a0812fa5e&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                     .play-icon
 
         section.text-image-section
@@ -298,10 +298,10 @@ block main
                         |- Айдентики бренда
                     .anchor-link Заказать
 
-            .video
+            .video.custom-2
                 .video-img
                     img(src="assets/images/immersive/img-15136263.webp", alt="Мультимедийная витрина")
-                iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/355684071?h=94622127b7&autoplay=1&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
+                iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/355684071?muted=1&autoplay=1&h=94622127b7&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                 .play-icon
 
         section.text-image-section.reverse
@@ -311,10 +311,10 @@ block main
                     p Разработка цифрового художественного контента включает использование цифровых инструментов и программного кода для создания и гибкого управления различными формами, мыслями и идеями
                     .anchor-link Заказать
 
-            .video
+            .video.custom-2
                 .video-img
                     img(src="assets/images/immersive/img-2352361.webp", alt="Мультимедийная витрина")
-                iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/288882229?h=55a50e16ed&autoplay=1&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
+                iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/288882229?muted=1&autoplay=1&h=55a50e16ed&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                 .play-icon
 
         section.text-section
@@ -341,20 +341,20 @@ block main
                 form(method="post")
                     .form-row
                         label Имя*:
-                        input(type="text" required)
+                        input#formName.form__input._req.form__name(type="text")
                     .form-row
                         label email*:
-                        input(type="email" required)
+                        input#formEmail.form__input._req._email.form__email(type="text")
                     .form-row
                         label сообщение:
                         textarea
                     .form-row
                         .checkbox-label
-                            input#agreement(type="checkbox" style="display:none" checked)
+                            input#agreement.checkbox__input._req(type="checkbox" style="display:none" checked)
                             label(for="agreement")
                                 p Я <a href="agreement">согласен</a> на обработку персональных данных (в соответствии с Федеральным законом РФ от 27 июля 2006 г. №152-ФЗ «О персональных данных»)
                     .form-row
-                        button(type="submit") Отправить
+                        button.form_button(type="submit") Отправить
 
                 .info.hide Успешно отправлено
                 #error_text.error_text.hide Пожалуйста, заполните обязательные поля

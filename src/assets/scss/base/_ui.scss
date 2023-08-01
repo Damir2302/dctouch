@@ -151,6 +151,22 @@ main {
   z-index: 1;
 }
 
+.video.custom-1::before {
+  height: calc(100% - 106px);
+
+  @include breakpoint(hd) {
+    height: calc(100% - 325px);
+  }
+}
+
+.video.custom-2::before {
+  height: calc(100% - 90px);
+
+  @include breakpoint(hd) {
+    height: calc(100% - 165px);
+  }
+}
+
 .video iframe {
   display: none;
   width: 100%;
