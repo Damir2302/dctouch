@@ -457,7 +457,119 @@ main {
     display: block;
     width: 100%;
     height: calc(100% - 62px);
-    z-index: 1
+    z-index: 1;
+    background: red;
+    opacity: .3
+}
+
+@media(max-width: 743px) {
+    .video.custom-1::before {
+        padding-bottom: 66.666%;
+        height: 0
+    }
+}
+
+@media(min-width: 744px) {
+    .video.custom-1::before {
+        height: calc(100% - 45px)
+    }
+}
+
+@media(min-width: 1200px) {
+    .video.custom-1::before {
+        height: calc(100% - 195px)
+    }
+}
+
+@media(min-width: 1920px) {
+    .video.custom-1::before {
+        height: calc(100% - 45px)
+    }
+}
+
+@media(min-width: 744px)and (max-width: 1199px) {
+    .video.custom-2 {
+        margin: 0 auto;
+        padding: 0 30px;
+        max-width: 684px;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box
+    }
+}
+
+@media(max-width: 743px) {
+    .video.custom-2::before {
+        padding-bottom: 60.666%;
+        height: 0
+    }
+}
+
+@media(min-width: 744px) {
+    .video.custom-2::before {
+        height: calc(100% - 95px)
+    }
+}
+
+@media(min-width: 1200px) {
+    .video.custom-2::before {
+        height: calc(100% - 125px)
+    }
+}
+
+@media(min-width: 1920px) {
+    .video.custom-2::before {
+        height: calc(100% - 80px)
+    }
+}
+
+@media(max-width: 743px) {
+    .video.custom-3::before {
+        padding-bottom: 66.666%;
+        height: 0
+    }
+}
+
+@media(min-width: 744px) {
+    .video.custom-3::before {
+        height: calc(100% - 45px)
+    }
+}
+
+@media(min-width: 1200px) {
+    .video.custom-3::before {
+        height: calc(100% - 90px)
+    }
+}
+
+@media(min-width: 1920px) {
+    .video.custom-3::before {
+        height: calc(100% - 45px)
+    }
+}
+
+@media(max-width: 743px) {
+    .video.custom-4::before {
+        padding-bottom: 66.666%;
+        height: 0
+    }
+}
+
+@media(min-width: 744px) {
+    .video.custom-4::before {
+        height: calc(100% - 45px)
+    }
+}
+
+@media(min-width: 1200px) {
+    .video.custom-4::before {
+        height: calc(100% - 170px)
+    }
+}
+
+@media(min-width: 1920px) {
+    .video.custom-4::before {
+        height: calc(100% - 45px)
+    }
 }
 
 .video iframe {
@@ -1714,14 +1826,7 @@ section {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        width: 14800px;
         height: 100%
-    }
-}
-
-@media(min-width: 1920px) {
-    .wrapper {
-        width: 20200px
     }
 }
 

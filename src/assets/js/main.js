@@ -20,88 +20,88 @@ $(document).ready(function() {
         $(this).closest('#menu').toggleClass('active')
     })
 
-    var scroll
+    // var scroll
 
-    function initScroll() {
-        scroll = new LocomotiveScroll({
-            el: document.querySelector('[data-scroll-container]'),
-            smooth: true,
-            direction: 'horizontal',
-            reloadOnContextChange: true,
-        })
+    // function initScroll() {
+    //     scroll = new LocomotiveScroll({
+    //         el: document.querySelector('[data-scroll-container]'),
+    //         smooth: true,
+    //         direction: 'horizontal',
+    //         reloadOnContextChange: true,
+    //     })
 
-        scroll.tablet.breakpoint = 1200
+    //     scroll.tablet.breakpoint = 1200
 
-        scroll.on('scroll', function({scroll}) {
+    //     scroll.on('scroll', function({scroll}) {
 
-            if (scroll.x > 0.6 ) {
-                $('#arrow').fadeOut()
-            } else {
-                $('#arrow').fadeIn()
-            }
+    //         if (scroll.x > 0.6 ) {
+    //             $('#arrow').fadeOut()
+    //         } else {
+    //             $('#arrow').fadeIn()
+    //         }
 
-            if (scroll.x < 80) {
-                $('#jump-to-menu').removeClass('fixed')
-            } else {
-                $('#jump-to-menu').addClass('fixed')
-            }
-        })
+    //         if (scroll.x < 80) {
+    //             $('#jump-to-menu').removeClass('fixed')
+    //         } else {
+    //             $('#jump-to-menu').addClass('fixed')
+    //         }
+    //     })
 
-        scroll.update()
+    //     scroll.update()
 
-        $('#jump-to-menu').on('click', function() {
-            scroll.scrollTo(0, 0)
-        })
+    //     $('#jump-to-menu').on('click', function() {
+    //         scroll.scrollTo(0, 0)
+    //     })
 
-        $('.js-anchor').on('click', function(e) {
-            e.preventDefault()
+    //     $('.js-anchor').on('click', function(e) {
+    //         e.preventDefault()
 
-            let targetElement
-            targetElement = document.querySelector(`${e.target.getAttribute('href')}`)
+    //         let targetElement
+    //         targetElement = document.querySelector(`${e.target.getAttribute('href')}`)
 
-            const targetOffset = targetElement.offsetLeft;
-            const targetWidth = targetElement.offsetWidth;
-            const windowWidth = window.innerWidth;
+    //         const targetOffset = targetElement.offsetLeft;
+    //         const targetWidth = targetElement.offsetWidth;
+    //         const windowWidth = window.innerWidth;
 
-            scroll.scrollTo(targetOffset - (windowWidth / 2) + (targetWidth / 2))
-        })
-    }
+    //         scroll.scrollTo(targetOffset - (windowWidth / 2) + (targetWidth / 2))
+    //     })
+    // }
 
-    function destroyScroll() {
-        if (scroll) {
-            scroll.destroy()
-            scroll = null
-        }
-    }
+    // function destroyScroll() {
+    //     if (scroll) {
+    //         scroll.destroy()
+    //         scroll = null
+    //     }
+    // }
 
-    function toggleScroll() {
-        const screenWidth = $(window).width();
+    // function toggleScroll() {
+    //     const screenWidth = $(window).width();
 
-        if (screenWidth >= 1200) {
-            initScroll()
-        } else {
-            destroyScroll()
-        }
-    }
+    //     if (screenWidth >= 1200) {
+    //         initScroll()
+    //     } else {
+    //         destroyScroll()
+    //     }
+    // }
 
-    // Инициализация плагина при загрузке страницы
-    toggleScroll()
+    // // Инициализация плагина при загрузке страницы
+    // toggleScroll()
 
-    // Включение или отключение плагина при изменении размера экрана
-    window.addEventListener('resize', toggleScroll)
+    // // Включение или отключение плагина при изменении размера экрана
+    // window.addEventListener('resize', toggleScroll)
 
-    function scrollToTop() {
-        if ($(window).width() < 1200) {
-            $('#jump-to-menu').on('click', function() {
-                $(window).scrollTop(0)
-            })
-        }
-    }
+    // function scrollToTop() {
+    //     if ($(window).width() < 1200) {
+    //         $('#jump-to-menu').on('click', function() {
+    //             $(window).scrollTop(0)
+    //         })
+    //     }
+    // }
 
-    scrollToTop()
+    // scrollToTop()
 
-    $(window).on('resize', function() {
-        scrollToTop()
-    })
+    // $(window).on('resize', function() {
+    //     scrollToTop()
+    // })
 
 })

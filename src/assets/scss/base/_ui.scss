@@ -149,21 +149,99 @@ main {
   width: 100%;
   height: calc(100% - 62px);
   z-index: 1;
+  background: red;
+  opacity: 0.3;
 }
 
 .video.custom-1::before {
-  height: calc(100% - 106px);
+
+  @include breakpointMax(md) {
+    padding-bottom: 66.666%;
+    height: 0;
+  }
+
+  @include breakpoint(md) {
+    height: calc(100% - 45px);
+  }
+
+  @include breakpoint(xl) {
+    height: calc(100% - 195px);
+  }
 
   @include breakpoint(hd) {
-    height: calc(100% - 325px);
+    height: calc(100% - 45px);
+  }
+}
+
+.video.custom-2 {
+
+  @include breakpoint(md) {
+    
+    @include breakpointMax(xl) {
+      margin: 0 auto;
+      padding: 0 30px;
+      max-width: 684px;
+      box-sizing: content-box;
+    }
   }
 }
 
 .video.custom-2::before {
-  height: calc(100% - 90px);
+  @include breakpointMax(md) {
+    padding-bottom: 60.666%;
+    height: 0;
+  }
+
+  @include breakpoint(md) {
+    height: calc(100% - 95px);
+  }
+
+  @include breakpoint(xl) {
+    height: calc(100% - 125px);
+  }
 
   @include breakpoint(hd) {
-    height: calc(100% - 165px);
+    height: calc(100% - 80px);
+  }
+}
+
+.video.custom-3::before {
+
+  @include breakpointMax(md) {
+    padding-bottom: 66.666%;
+    height: 0;
+  }
+
+  @include breakpoint(md) {
+    height: calc(100% - 45px);
+  }
+  
+  @include breakpoint(xl) {
+    height: calc(100% - 90px);
+  }
+
+  @include breakpoint(hd) {
+    height: calc(100% - 45px);
+  }
+}
+
+.video.custom-4::before {
+
+  @include breakpointMax(md) {
+    padding-bottom: 66.666%;
+    height: 0;
+  }
+
+  @include breakpoint(md) {
+    height: calc(100% - 45px);
+  }
+  
+  @include breakpoint(xl) {
+    height: calc(100% - 170px);
+  }
+
+  @include breakpoint(hd) {
+    height: calc(100% - 45px);
   }
 }
 

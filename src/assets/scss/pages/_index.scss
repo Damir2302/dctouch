@@ -133,13 +133,13 @@ section {
     @include breakpoint(xl) {
         position: relative;
         display: flex;
-        width: 14800px;
+        // width: 14800px;
         height: 100%;
     }
 
-    @include breakpoint(hd) {
-        width: 20200px;
-    }
+    // @include breakpoint(hd) {
+    //     width: 20200px;
+    // }
 }
 
 .wrapper.second-page {

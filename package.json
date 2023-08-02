@@ -44,7 +44,7 @@
     "jquery-ui": "^1.13.1",
     "jquery-validation": "^1.19.4",
     "sass": "^1.59.3",
-    "swiper": "^8.3.0",
+    "swiper": "^10.1.0",
     "webpack": "^5.4.0",
     "webpack-stream": "^6.1.0",
     "ymaps-touch-scroll": "^2.2.0"
@@ -55,7 +55,6 @@
     "IE 10"
   ],
   "dependencies": {
-    "jscrollpane": "^2.2.3-rc.2",
-    "locomotive-scroll": "^4.1.4"
+    "jscrollpane": "^2.2.3-rc.2"
   }
 }
