@@ -29,15 +29,16 @@ $(document).ready(function() {
             pageSlider = new Swiper('.main-swiper', {
                 slidesPerView: "auto",
                 freeMode: true,
-                mousewheel: {
-                    invert: false,
-                    sensitivity: 6,
-                    releaseOnEdges: true,
-                },
-                touchmovePropagation: false,
-                keyboard: {
-                    enabled: true,
-                }
+                // mousewheelControl: true,
+                // mousewheel: {
+                //     invert: false,
+                //     sensitivity: 6,
+                //     releaseOnEdges: true,
+                // },
+                // touchmovePropagation: false,
+                // keyboard: {
+                //     enabled: true,
+                // }
             })
         } else if ($(window).width() < 1200 && pageSliderInit == true) {
             if (typeof pageSlider !== "undefined") {
