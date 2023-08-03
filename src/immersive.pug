@@ -6,9 +6,9 @@ extends includes/_page
 
 block main
 
-    .wrapper
+    .wrapper.swiper-wrapper
 
-        section#menu.menu
+        section#menu.menu.swiper-slide
 
             .menu-wrapper
 
@@ -37,11 +37,11 @@ block main
                         img(src="assets/images/logo.webp", alt="logo")
                     .logo-text меню
 
-        section.section-first(style="background-image: url('assets/images/immersive/image-2423532.webp')")
+        section.section-first.swiper-slide(style="background-image: url('assets/images/immersive/image-2423532.webp')")
             h1.main-title Интерактивные инсталляции
             p.main-subtitle Эмоциональное погружение в продукт
 
-        section.text-image-section.reverse
+        section.text-image-section.reverse.swiper-slide
             .content-text
                 .section-subtitle ПОДХОД
                 p Интерактивные / иммерсивные инсталляции — инструмент, который используется для эмоциональной коммуникации, погружения в контекст брэнда или идеи продукта. Позволяет аудитории взаимодействовать с контентом и стать частью создаваемой среды
@@ -54,7 +54,7 @@ block main
                 iframe(title="Интерактивная инсталляция услуги разработки" loading="lazy" src="https://vk.com/video_ext.php?oid=-34832376&id=456239087&hash=33c5ff7f506f909b&hd=1&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                 .play-icon
 
-        section.text-section
+        section.text-section.swiper-slide
             .content-text
                 .section-subtitle Инструменты
 
@@ -66,7 +66,7 @@ block main
                     li — Искусственный интеллект — используется для генерации контента, анализа данных и реакции на действия посетителей
                     li — Кастомное программное обеспечение — используется для создания интерактивного интерфейса для обработки входной информации, различного медиаконтента, а также для обеспечения пользовательской обратной связи. Кроме того, реализуемые программные продукты используется для связи с другими устройствами, что позволяет создавать многоуровневые интерактивные приложения для комфортного взаимодействия и глубокого погружения
 
-        section.video-section
+        section.video-section.swiper-slide
             .present
                 .section-top
                     .section-title Мультинишевая адаптация
@@ -78,7 +78,7 @@ block main
                     iframe(title="Интерактивные инсталляции в искусстве и архитектуре" loading="lazy" src="https://vk.com/video_ext.php?oid=-34832376&id=456239097&hash=5bfff0816a8cae22&hd=1&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                     .play-icon
 
-        section.text-image-section
+        section.text-image-section.swiper-slide
             .video
                 .video-img
                     img(src="assets/images/immersive/img-52352323.webp", alt="Разработчики интерактивных инсталляции")
@@ -91,7 +91,7 @@ block main
                     p Комплексное техническое оснащение включает в себя: высококачественные мультимединое оборудование, интерактивный сторитейлинговый / арт контент, контрольные системы управления элементами и автоматизацию для обеспечения стабильной работы во время мероприятия, что делает пространство более концептуальным, автономным и профессиональным
                     .anchor-link Заказать
 
-        section.video-section
+        section.video-section.swiper-slide
             .present
                 .section-top
                     .section-title Медиа решения и&nbsp;ритейл
@@ -103,7 +103,7 @@ block main
                     iframe(title="Интерактивная витрина" loading="lazy" src="https://vk.com/video_ext.php?oid=-34832376&id=456239092&hash=0ccf2bfb609067a6&hd=2&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                     .play-icon
 
-        section.text-image-section
+        section.text-image-section.swiper-slide
             .content-text.flex-end
                 a.js-anchor(href="#form")
                     .section-subtitle Арт объекты
@@ -116,7 +116,7 @@ block main
                 iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/366068068?muted=1&autoplay=1&h=299a9aeeaf&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                 .play-icon
 
-        section.text-section
+        section.text-section.swiper-slide
             .content-text
                 a.js-anchor(href="#form")
                     .section-subtitle Медиа полотна
@@ -133,13 +133,13 @@ block main
 
                     .anchor-link Заказать
 
-        section.image-section.section-bg#installation(style="background-image: url('assets/images/immersive/img-32523623.webp')")
+        section.image-section.section-bg#installation.swiper-slide(style="background-image: url('assets/images/immersive/img-32523623.webp')")
             .content-text.flex-end
                 .section-top
                     .section-title Интерактивные промо инсталляции
                     .section-text Разработка комплексных интерактивных продуктовых решений
 
-        section.text-image-section
+        section.text-image-section.swiper-slide
             .content-text.flex-end
                 a.js-anchor(href="#form")
                     .section-subtitle Подход
@@ -160,7 +160,7 @@ block main
                         .swiper-button-prev
                         .swiper-button-next
 
-        section.text-image-section.reverse
+        section.text-image-section.reverse.swiper-slide
             .content-text
                 a.js-anchor(href="#form")
                     .section-subtitle Промо мероприятия
@@ -183,7 +183,7 @@ block main
                         .swiper-button-prev
                         .swiper-button-next
 
-        section.text-section
+        section.text-section.swiper-slide
             .content-text
                 a.js-anchor(href="#form")
                     .section-subtitle Контекст
@@ -201,7 +201,7 @@ block main
 
                 .anchor-link Заказать
 
-        section.video-section#museums
+        section.video-section#museums.swiper-slide
             .present
                 .section-top
                     .section-title Музеи и выставки
@@ -213,7 +213,7 @@ block main
                     iframe(title="Интерактивная витрина" loading="lazy" src="https://player.vimeo.com/video/321046681?muted=1&autoplay=1&h=0a0812fa5e&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                     .play-icon
 
-        section.text-image-section
+        section.text-image-section.swiper-slide
             .content-text.flex-end
                 a.js-anchor(href="#form")
                     .section-subtitle Музеи и выставки
@@ -236,7 +236,7 @@ block main
                         .swiper-button-prev
                         .swiper-button-next
 
-        section.text-image-section.reverse
+        section.text-image-section.reverse.swiper-slide
             .content-text
                 a.js-anchor(href="#form")
                     .section-subtitle Подход
@@ -263,7 +263,7 @@ block main
                         .swiper-button-prev
                         .swiper-button-next
 
-        section.text-section
+        section.text-section.swiper-slide
             .content-text
                 a.js-anchor(href="#form")
                     .section-subtitle Концепция
@@ -275,13 +275,13 @@ block main
 
                     .anchor-link Заказать
 
-        section.image-section.section-bg#arts(style="background-image: url('assets/images/immersive/img-2366321.webp')")
+        section.image-section.section-bg#arts.swiper-slide(style="background-image: url('assets/images/immersive/img-2366321.webp')")
             .content-text
                 .section-top
                     .section-title Разработка арт контента
                     .section-text *
 
-        section.text-image-section
+        section.text-image-section.swiper-slide
             .content-text.flex-end
                 a.js-anchor(href="#form")
                     .section-subtitle Разработка арт контента в контексте
@@ -304,7 +304,7 @@ block main
                 iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/355684071?muted=1&autoplay=1&h=94622127b7&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                 .play-icon
 
-        section.text-image-section.reverse
+        section.text-image-section.reverse.swiper-slide
             .content-text
                 a.js-anchor(href="#form")
                     .section-subtitle Подход
@@ -317,7 +317,7 @@ block main
                 iframe(title="Интерактивные инсталляции в городе" loading="lazy" src="https://player.vimeo.com/video/288882229?muted=1&autoplay=1&h=55a50e16ed&color=000000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" )
                 .play-icon
 
-        section.text-section
+        section.text-section.swiper-slide
             .content-text
                 a.js-anchor(href="#form")
                     .section-subtitle Концепция
@@ -333,7 +333,7 @@ block main
                         |Важно отметить, что эмоциональное воздействие цифрового арта может варьироваться в зависимости от опыта и точки зрения отдельного зрителя, а также от контекста, в котором представлен контент
                     .anchor-link Заказать
 
-        section.form#form
+        section.form#form.swiper-slide
             .form-wrap
 
                 .form-title Оставить заявку или задать вопрос
@@ -360,7 +360,7 @@ block main
                 #error_text.error_text.hide Пожалуйста, заполните обязательные поля
                 #error_text-email.error_text-email.hide Пожалуйста, введите корректный email
 
-        section.footer
+        section.footer.swiper-slide
             .footer__title
                 .section-subtitle Другие проекты dctouch
                 .text-label Выберите проект в списке для просмотра
@@ -475,7 +475,7 @@ block main
                     li.footer__list-item
                         a(href='https://www.dctouch.ru/tables/multitach-stolyi/moka' target='_blank') MOKA
 
-        section.contacts#contacts
+        section.contacts#contacts.swiper-slide
             .section-subtitle контакты
             .contacts-title DCTOUCH
             .contacts-row

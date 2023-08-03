@@ -20,6 +20,19 @@ $(document).ready(function() {
         $(this).closest('#menu').toggleClass('active')
     })
 
+    if ($(window).width() >= 1200) {
+        const pageSlider = new Swiper('.main-swiper', {
+            slidesPerView: "auto",
+            freeMode: true,
+            mousewheel: {
+                sensitivity: 6
+            },
+            keyboard: {
+                enabled: true,
+            }
+        })
+    }
+
     // var scroll
 
     // function initScroll() {

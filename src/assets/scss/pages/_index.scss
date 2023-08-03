@@ -153,6 +153,10 @@ section {
     }
 }
 
+.wrapper.swiper-wrapper{
+    transition-duration: .5s!important;
+}
+
 .section-first {
     padding: 0 30px 100px;
     background-position: top left;

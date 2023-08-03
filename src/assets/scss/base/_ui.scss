@@ -23,11 +23,6 @@ body b {
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
-
-  @include breakpoint(lg) {
-    width: 5px;
-    height: 10px;
-  }
 }
 
 ::-webkit-scrollbar-track {
@@ -47,7 +42,7 @@ body b {
 * {
 
   @include breakpoint(lg) {
-    scrollbar-width: thin;
+    scrollbar-width: none;
     scrollbar-color: #F0B446 #f7f7f7;
   }
 }
@@ -149,7 +144,7 @@ main {
   width: 100%;
   height: calc(100% - 62px);
   z-index: 1;
-  background: red;
+  // background: red;
   opacity: 0.3;
 }
 
