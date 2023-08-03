@@ -38,7 +38,6 @@ section {
     white-space: normal;
 
     @include breakpoint(xl) {
-        width: inherit;
         height: auto;
     }
 }
@@ -128,33 +127,15 @@ section {
 }
 
 .wrapper {
-    display: block;
-
-    @include breakpoint(xl) {
-        position: relative;
-        display: flex;
-        // width: 14800px;
-        height: 100%;
-    }
-
-    // @include breakpoint(hd) {
-    //     width: 20200px;
-    // }
-}
-
-.wrapper.second-page {
-
-    @include breakpoint(xl) {
-        width: 10700px;
-    }
-
-    @include breakpoint(hd) {
-        width: 13950px;
+    
+    @include breakpointMax(xl) {
+        display: block;
     }
 }
 
-.wrapper.swiper-wrapper{
-    transition-duration: .5s!important;
+.wrapper.swiper-wrapper {
+    // transition-duration: .5s!important;
+    // -webkit-overflow-scrolling: touch;
 }
 
 .section-first {

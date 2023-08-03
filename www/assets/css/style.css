@@ -347,7 +347,8 @@ main {
 
 #page {
     position: relative;
-    min-width: 360px
+    min-width: 360px;
+    overflow: hidden
 }
 
 .arrow-up {
@@ -1609,7 +1610,6 @@ section {
 
 @media(min-width: 1200px) {
     section {
-        width: inherit;
         height: auto
     }
 }
@@ -1713,35 +1713,10 @@ section {
     color: #000
 }
 
-.wrapper {
-    display: block
-}
-
-@media(min-width: 1200px) {
+@media(max-width: 1199px) {
     .wrapper {
-        position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        height: 100%
+        display: block
     }
-}
-
-@media(min-width: 1200px) {
-    .wrapper.second-page {
-        width: 10700px
-    }
-}
-
-@media(min-width: 1920px) {
-    .wrapper.second-page {
-        width: 13950px
-    }
-}
-
-.wrapper.swiper-wrapper {
-    -webkit-transition-duration: .5s !important;
-    transition-duration: .5s !important
 }
 
 .section-first {

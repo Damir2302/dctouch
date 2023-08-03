@@ -20,18 +20,59 @@ $(document).ready(function() {
         $(this).closest('#menu').toggleClass('active')
     })
 
-    if ($(window).width() >= 1200) {
-        const pageSlider = new Swiper('.main-swiper', {
-            slidesPerView: "auto",
-            freeMode: true,
-            mousewheel: {
-                sensitivity: 6
-            },
-            keyboard: {
-                enabled: true,
+    let pageSlider;
+    let pageSliderInit;
+
+    function pageSliderRun() {
+        if ($('.main-swiper').length && !pageSliderInit && $(window).width() >= 1200) {
+            pageSliderInit = true
+            pageSlider = new Swiper('.main-swiper', {
+                slidesPerView: "auto",
+                freeMode: true,
+                mousewheel: {
+                    invert: false,
+                    sensitivity: 6,
+                    releaseOnEdges: true,
+                },
+                touchmovePropagation: false,
+                keyboard: {
+                    enabled: true,
+                }
+            })
+        } else if ($(window).width() < 1200 && pageSliderInit == true) {
+            if (typeof pageSlider !== "undefined") {
+                pageSliderInit = false
+                pageSlider.destroy()
             }
-        })
+        }
     }
+
+    pageSliderRun();
+
+    let windowWidth
+
+    if ($(window).width() < 1200) {
+        windowWidth = 0
+    } else {
+        windowWidth = 1
+    }
+
+    function checkMediaQueries() {
+        if (window.matchMedia('(min-width: 1200px)').matches && windowWidth == 0) {
+            windowWidth = 1
+            location.reload(); 
+        } else if (window.matchMedia('(max-width: 1199px)').matches && windowWidth == 1) {
+            windowWidth = 0
+            location.reload(); 
+        }
+    }
+    
+    checkMediaQueries()
+
+    $(window).on("resize", function () {
+        checkMediaQueries()
+        pageSliderRun()
+    })
 
     // var scroll
 
