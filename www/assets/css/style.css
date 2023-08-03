@@ -1826,7 +1826,14 @@ section {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        width: 14800px;
         height: 100%
+    }
+}
+
+@media(min-width: 1920px) {
+    .wrapper {
+        width: 20200px
     }
 }
 
