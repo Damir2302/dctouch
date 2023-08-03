@@ -1,11 +1,13 @@
 $(document).ready(function() {
 
+    // PLAY ICON
     $('.play-icon').on('click', function() {
         $(this).addClass('hidden')
         $(this).parent().find('.video-img').addClass('hidden')
         $(this).closest('section').addClass('play')
     })
 
+    // SWIPER SLIDER
     const slider = new Swiper('.slider .swiper', {
         slidesPerView: 1,
         loop: true,
@@ -16,10 +18,12 @@ $(document).ready(function() {
         },
     })
 
+    // ASIDE MENU
     $('#openMenu').on('click', function() {
         $(this).closest('#menu').toggleClass('active')
     })
 
+    // LOCOMOTIVE SCROLL
     var scroll
 
     function initScroll() {
@@ -29,6 +33,7 @@ $(document).ready(function() {
             direction: 'horizontal',
             reloadOnContextChange: true,
         })
+        console.log('1200')
 
         scroll.tablet.breakpoint = 1200
 
@@ -67,29 +72,53 @@ $(document).ready(function() {
         })
     }
 
-    function destroyScroll() {
-        if (scroll) {
-            scroll.destroy()
-            scroll = null
-        }
+    if ($(window).width() >= 1200) {
+        initScroll()
     }
 
-    function toggleScroll() {
-        const screenWidth = $(window).width();
+    // function destroyScroll() {
+    //     if (scroll) {
+    //         scroll.destroy()
+    //         scroll = null
+    //     }
+    // }
 
-        if (screenWidth >= 1200) {
-            initScroll()
-        } else {
-            destroyScroll()
-        }
-    }
+    // function toggleScroll() {
+    //     const screenWidth = $(window).width();
+
+    //     if (screenWidth >= 1200) {
+    //         initScroll()
+    //     } else {
+    //         destroyScroll()
+    //     }
+    // }
 
     // Инициализация плагина при загрузке страницы
-    toggleScroll()
+    // toggleScroll()
 
-    // Включение или отключение плагина при изменении размера экрана
-    window.addEventListener('resize', toggleScroll)
+    // CHECK WINDOW WIDTH (MEDIAQUERIES)
+    let windowWidth
 
+    if ($(window).width() < 1200) {
+        windowWidth = 0
+    } else {
+        windowWidth = 1
+    }
+
+    function checkMediaQueries() {
+        if (window.matchMedia('(min-width: 1200px)').matches && windowWidth == 0) {
+            windowWidth = 1
+            location.reload()
+            initScroll()
+        } else if (window.matchMedia('(max-width: 1199px)').matches && windowWidth == 1) {
+            windowWidth = 0
+            location.reload()
+        }
+    }
+
+    checkMediaQueries()
+
+    // SCROLL TO TOP
     function scrollToTop() {
         if ($(window).width() < 1200) {
             $('#jump-to-menu').on('click', function() {
@@ -97,10 +126,12 @@ $(document).ready(function() {
             })
         }
     }
-
+    
     scrollToTop()
 
-    $(window).on('resize', function() {
+    // ON RESIZE EVENT
+    window.addEventListener('resize', function() {
+        checkMediaQueries(),
         scrollToTop()
     })
 
