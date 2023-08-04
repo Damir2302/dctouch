@@ -23,6 +23,26 @@ $(document).ready(function() {
         $(this).closest('#menu').toggleClass('active')
     })
 
+    let start = null;
+
+window.addEventListener('touchstart', function(e) {
+    start = e.changedTouches[0];
+});
+
+
+window.addEventListener('touchend', function(e) {
+  let end = e.changedTouches[0];
+
+  if(end.screenY - start.screenY > 0)
+  {
+      $('.text-alert').append('<p>swipe up</p>')
+  }
+  else if(end.screenY - start.screenY < 0)
+  {
+    $('.text-alert').append('<p>swipe down</p>')
+  }
+});
+
     // LOCOMOTIVE SCROLL
     var scroll
 
@@ -32,7 +52,7 @@ $(document).ready(function() {
             smooth: true,
             direction: 'horizontal',
             reloadOnContextChange: true,
-            touchMultiplier: 10
+            getDirection: true
         })
         console.log('1200')
 
