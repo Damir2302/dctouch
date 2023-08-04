@@ -5,7 +5,35 @@ $(document).ready(function() {
         $(this).addClass('hidden')
         $(this).parent().find('.video-img').addClass('hidden')
         $(this).closest('section').addClass('play')
+
+        
+        var video = $(this).parent().find('video')[0];
+        video.play();
     })
+
+    
+    
+    // setInterval(function() {
+    //     $('video').each(function(){
+    
+    //         let id = $(this).attr("id");
+    //         let played = $(this).attr("played");
+    
+    //         if ($(this).isInViewport()) {
+    //             if (played == "false") { 
+    //                 $(this)[0].play();
+    //                 $(this).attr("played", "true");  
+    //             }
+    //             console.log('view')
+    //         } else {
+    //             if (played == "true") { 
+    //                 $(this)[0].pause();
+    //                 $(this).attr("played", "false");  
+    //             }
+    //             console.log('noview')
+    //         }
+    //     });
+    // }, 1000);
 
     // SWIPER SLIDER
     const slider = new Swiper('.slider .swiper', {
@@ -23,8 +51,6 @@ $(document).ready(function() {
         $(this).closest('#menu').toggleClass('active')
     })
 
-    let start = null;
-
     // LOCOMOTIVE SCROLL
     var scroll
 
@@ -34,10 +60,13 @@ $(document).ready(function() {
             smooth: true,
             direction: 'horizontal',
             reloadOnContextChange: true,
+            getDirection: true
         })
         console.log('1200')
 
-        scroll.tablet.breakpoint = 1200
+        scroll.tablet.breakpoint = 1200;
+
+        
 
         scroll.on('scroll', function({scroll}) {
 
@@ -52,6 +81,33 @@ $(document).ready(function() {
             } else {
                 $('#jump-to-menu').addClass('fixed')
             }
+
+            $.fn.isInViewport = function() {
+                var elementLeft = $(this).offset().left;
+                var elementRight = elementLeft + $(this).outerWidth(); 
+            
+                var viewportLeft = scroll.x;
+                var viewportRight = viewportLeft + $(window).width();
+    
+                return elementRight > viewportLeft && elementLeft < viewportRight;
+            }
+
+            $('video').each(function(){
+
+                let played = $(this).attr("played");
+        
+                if ($(this).isInViewport()) {
+                    if (played == "false") { 
+                        $(this).attr("played", "true");  
+                    }
+                } else {
+                    if (played == "true") { 
+                        $(this)[0].pause();
+                        $(this).attr("played", "false");  
+                    }
+                }
+            });
+            
         })
 
         scroll.update()
@@ -72,6 +128,7 @@ $(document).ready(function() {
 
             scroll.scrollTo(targetOffset - (windowWidth / 2) + (targetWidth / 2))
         })
+
     }
 
     if ($(window).width() >= 1200) {
