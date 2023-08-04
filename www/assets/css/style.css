@@ -1809,45 +1809,6 @@ section {
     color: #000
 }
 
-.text-alert {
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    font-weight: bold;
-    font-size: 18px;
-    color: #fff;
-    z-index: 10
-}
-
-.text-alert p {
-    padding: 10px;
-    -webkit-animation: ani 5s ease forwards;
-    animation: ani 5s ease forwards
-}
-
-@-webkit-keyframes ani {
-    0% {
-        opacity: 1
-    }
-
-    100% {
-        opacity: 0;
-        display: none
-    }
-}
-
-@keyframes ani {
-    0% {
-        opacity: 1
-    }
-
-    100% {
-        opacity: 0;
-        display: none
-    }
-}
-
 .wrapper {
     display: block
 }
