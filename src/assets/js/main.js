@@ -6,34 +6,43 @@ $(document).ready(function() {
         $(this).parent().find('.video-img').addClass('hidden')
         $(this).closest('section').addClass('play')
 
-        
         var video = $(this).parent().find('video')[0];
         video.play();
     })
 
-    
-    
-    // setInterval(function() {
-    //     $('video').each(function(){
-    
-    //         let id = $(this).attr("id");
-    //         let played = $(this).attr("played");
-    
-    //         if ($(this).isInViewport()) {
-    //             if (played == "false") { 
-    //                 $(this)[0].play();
-    //                 $(this).attr("played", "true");  
-    //             }
-    //             console.log('view')
-    //         } else {
-    //             if (played == "true") { 
-    //                 $(this)[0].pause();
-    //                 $(this).attr("played", "false");  
-    //             }
-    //             console.log('noview')
-    //         }
-    //     });
-    // }, 1000);
+    function playPauseVideo() {
+        let videos = document.querySelectorAll("video");
+        videos.forEach((video) => {
+            // We can only control playback without insteraction if video is mute
+            video.muted = true;
+            // Play is a promise so we need to check we have it
+            let playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.then((_) => {
+                    let observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach((entry) => {
+                                if (
+                                    entry.intersectionRatio !== 1 &&
+                                    !video.paused
+                                ) {
+                                    video.pause();
+                                }
+                                // else if (video.paused) {
+                                //     video.play();
+                                // }
+                            });
+                        },
+                        { threshold: 0.2 }
+                    );
+                    observer.observe(video);
+                });
+            }
+        });
+    }
+
+    // And you would kick this off where appropriate with:
+    playPauseVideo();
 
     // SWIPER SLIDER
     const slider = new Swiper('.slider .swiper', {
@@ -66,7 +75,7 @@ $(document).ready(function() {
 
         scroll.tablet.breakpoint = 1200;
 
-        
+
 
         scroll.on('scroll', function({scroll}) {
 
@@ -82,32 +91,32 @@ $(document).ready(function() {
                 $('#jump-to-menu').addClass('fixed')
             }
 
-            $.fn.isInViewport = function() {
-                var elementLeft = $(this).offset().left;
-                var elementRight = elementLeft + $(this).outerWidth(); 
-            
-                var viewportLeft = scroll.x;
-                var viewportRight = viewportLeft + $(window).width();
-    
-                return elementRight > viewportLeft && elementLeft < viewportRight;
-            }
+            // $.fn.isInViewport = function() {
+            //     var elementLeft = $(this).offset().left;
+            //     var elementRight = elementLeft + $(this).outerWidth();
 
-            $('video').each(function(){
+            //     var viewportLeft = scroll.x;
+            //     var viewportRight = viewportLeft + $(window).width();
 
-                let played = $(this).attr("played");
-        
-                if ($(this).isInViewport()) {
-                    if (played == "false") { 
-                        $(this).attr("played", "true");  
-                    }
-                } else {
-                    if (played == "true") { 
-                        $(this)[0].pause();
-                        $(this).attr("played", "false");  
-                    }
-                }
-            });
-            
+            //     return elementRight > viewportLeft && elementLeft < viewportRight;
+            // }
+
+            // $('video').each(function(){
+
+            //     let played = $(this).attr("played");
+
+            //     if ($(this).isInViewport()) {
+            //         if (played == "false") {
+            //             $(this).attr("played", "true");
+            //         }
+            //     } else {
+            //         if (played == "true") {
+            //             $(this)[0].pause();
+            //             $(this).attr("played", "false");
+            //         }
+            //     }
+            // });
+
         })
 
         scroll.update()
@@ -185,7 +194,7 @@ $(document).ready(function() {
             })
         }
     }
-    
+
     scrollToTop()
 
     // ON RESIZE EVENT
