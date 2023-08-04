@@ -32,6 +32,7 @@ $(document).ready(function() {
             smooth: true,
             direction: 'horizontal',
             reloadOnContextChange: true,
+            touchMultiplier: 10
         })
         console.log('1200')
 
