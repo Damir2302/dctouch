@@ -43,6 +43,15 @@ window.addEventListener('touchend', function(e) {
   }
 });
 
+$(window).on('mousewheel', function(event) {
+    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+        $('.text-alert').append('<p>swipe up</p>')
+    }
+    else {
+        $('.text-alert').append('<p>swipe down</p>')
+    }
+})
+
     // LOCOMOTIVE SCROLL
     var scroll
 
@@ -52,7 +61,6 @@ window.addEventListener('touchend', function(e) {
             smooth: true,
             direction: 'horizontal',
             reloadOnContextChange: true,
-            getDirection: true
         })
         console.log('1200')
 
