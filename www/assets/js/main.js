@@ -8,6 +8,8 @@ $(document).ready(function() {
 
         var video = $(this).parent().find('video')[0];
         video.play();
+
+        video.muted = false;
     })
 
     function playPauseVideo() {
