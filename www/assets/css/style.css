@@ -444,8 +444,10 @@ main {
 }
 
 .video video {
+    margin: auto;
     background: #000;
-    width: 100%;
+    display: block;
+    width: calc(100% - 2px);
     height: 100%;
     -o-object-fit: contain;
     object-fit: contain
@@ -1628,7 +1630,7 @@ section {
 @media(min-width: 1200px) {
     .menu.active {
         padding-left: 30px;
-        width: 326px
+        width: 280px
     }
 }
 
@@ -1650,13 +1652,14 @@ section {
 }
 
 .menu.active .menu-left {
+    width: 170px;
     max-width: 200px;
     opacity: 1
 }
 
 .menu .label {
-    margin-bottom: 40px;
-    width: 200px
+    margin-bottom: 20px;
+    width: 110px
 }
 
 .menu ul li~li {
@@ -1665,7 +1668,7 @@ section {
 
 .menu ul li a {
     padding: 4px 0;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 21px;
     color: #666;
     text-transform: uppercase;
