@@ -137,8 +137,10 @@ main {
 }
 
 .video video {
+  margin: auto;
   background: #000;
-  width: 100%;
+  display: block;
+  width: calc(100% - 2px);
   height: 100%;
   object-fit: contain;
 }
@@ -178,7 +180,7 @@ main {
 // .video.custom-2 {
 
 //   @include breakpoint(md) {
-    
+
 //     @include breakpointMax(xl) {
 //       margin: 0 auto;
 //       padding: 0 30px;
@@ -217,7 +219,7 @@ main {
 //   @include breakpoint(md) {
 //     height: calc(100% - 45px);
 //   }
-  
+
 //   @include breakpoint(xl) {
 //     height: calc(100% - 90px);
 //   }
@@ -237,7 +239,7 @@ main {
 //   @include breakpoint(md) {
 //     height: calc(100% - 45px);
 //   }
-  
+
 //   @include breakpoint(xl) {
 //     height: calc(100% - 170px);
 //   }

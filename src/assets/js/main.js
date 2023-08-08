@@ -77,8 +77,6 @@ $(document).ready(function() {
 
         scroll.tablet.breakpoint = 1200;
 
-
-
         scroll.on('scroll', function({scroll}) {
 
             if (scroll.x > 0.6 ) {
@@ -87,38 +85,19 @@ $(document).ready(function() {
                 $('#arrow').fadeIn()
             }
 
-            if (scroll.x < 80) {
-                $('#jump-to-menu').removeClass('fixed')
+            if (!$('#menu').hasClass('active')) {
+                if (scroll.x < 80) {
+                    $('#jump-to-menu').removeClass('fixed')
+                } else {
+                    $('#jump-to-menu').addClass('fixed')
+                }
             } else {
-                $('#jump-to-menu').addClass('fixed')
+                if (scroll.x < 280) {
+                    $('#jump-to-menu').removeClass('fixed')
+                } else {
+                    $('#jump-to-menu').addClass('fixed')
+                }
             }
-
-            // $.fn.isInViewport = function() {
-            //     var elementLeft = $(this).offset().left;
-            //     var elementRight = elementLeft + $(this).outerWidth();
-
-            //     var viewportLeft = scroll.x;
-            //     var viewportRight = viewportLeft + $(window).width();
-
-            //     return elementRight > viewportLeft && elementLeft < viewportRight;
-            // }
-
-            // $('video').each(function(){
-
-            //     let played = $(this).attr("played");
-
-            //     if ($(this).isInViewport()) {
-            //         if (played == "false") {
-            //             $(this).attr("played", "true");
-            //         }
-            //     } else {
-            //         if (played == "true") {
-            //             $(this)[0].pause();
-            //             $(this).attr("played", "false");
-            //         }
-            //     }
-            // });
-
         })
 
         scroll.update()
