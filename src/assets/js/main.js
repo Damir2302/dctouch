@@ -58,9 +58,9 @@ $(document).ready(function() {
     })
 
     // ASIDE MENU
-    $('#openMenu').on('click', function() {
-        $(this).closest('#menu').toggleClass('active')
-    })
+    // $('#openMenu').on('click', function() {
+    //     $(this).closest('#menu').toggleClass('active')
+    // })
 
     // LOCOMOTIVE SCROLL
     var scroll
@@ -85,14 +85,14 @@ $(document).ready(function() {
                 $('#arrow').fadeIn()
             }
 
-            if (!$('#menu').hasClass('active')) {
+            if (!$('#mainnav').hasClass('active')) {
                 if (scroll.x < 80) {
                     $('#jump-to-menu').removeClass('fixed')
                 } else {
                     $('#jump-to-menu').addClass('fixed')
                 }
             } else {
-                if (scroll.x < 280) {
+                if (scroll.x < 270) {
                     $('#jump-to-menu').removeClass('fixed')
                 } else {
                     $('#jump-to-menu').addClass('fixed')

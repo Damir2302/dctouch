@@ -882,6 +882,7 @@ function MainNav() {
     e.openMenu = function() {
         e.opened = !0,
         e.tweening = !0,
+        addClass(e.mainnav, "active"),
         removeClass(e.panel, "closed"),
         setCookie("yr_menuclicked", !0),
         setCss(e.mainnav, "width", 270),
@@ -905,6 +906,7 @@ function MainNav() {
         e.opened = !1,
         e.tweening = !0,
         e.fallback || addClass(e.panel, "closed"),
+        removeClass(e.mainnav, "active"),
         setCss(e.mainnav, "width", e.sliceWidth_slice3),
         proto.tween(e, {
             prop: "nav_perc",
