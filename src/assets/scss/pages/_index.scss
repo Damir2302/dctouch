@@ -482,6 +482,7 @@ section.reverse {
     }
 
     .present .section-top {
+        z-index: 10;
 
         @include breakpoint(xl) {
             top: 85px;
