@@ -12,7 +12,7 @@
     <!-- Yandex Map-->
 </head>
 
-<body>
+<body id="container">
     <div id="page">
         <div class="text-alert"></div>
         <div id="jump-to-menu"></div>
@@ -24,19 +24,38 @@
         <!-- Main::Start-->
         <main id="main" data-scroll-container>
             <div class="wrapper second-page">
-                <section class="menu" id="menu">
-                    <div class="menu-wrapper">
-                        <div class="menu-left">
-                            <div class="label"><a href="https://www.dctouch.ru/"><img src="assets/images/dc-is.webp" alt="label"></a></div>
-                            <ul>
-                                <li><a href="https://www.dctouch.ru/">Главный сайт</a></li>
-                                <li><a class="js-anchor" href="#form">Заказать</a></li>
-                                <li><a class="js-anchor" href="#contacts">Контакты</a></li>
-                            </ul>
-                        </div>
-                        <div class="menu-right" id="openMenu">
-                            <div class="logo-img"><img src="assets/images/logo.webp" alt="logo"></div>
-                            <div class="logo-text">меню</div>
+                <section class="nav__display" id="mainnav" style="overflow: hidden; width: 80px;">
+                    <div class="panel closed">
+                        <div class="slice s1" style="transform: translate3d(-90px, 0px, 0px);">
+                            <div class="menu">
+                                <div class="content" style="display: none"><a href="https://www.dctouch.ru/" target="_blank"><img src="assets/images/dc-is.webp" alt="интерактивные системы" width="111" height="16"></a>
+                                    <ul>
+                                        <li class="active"><a href="#">#</a></li>
+                                        <li><a class="js-anchor" href="#installation">Разработка решений</a></li>
+                                        <li><a class="js-anchor" href="#museums">Музеи и выставки</a></li>
+                                        <li><a class="js-anchor" href="#arts">Арт контент</a></li>
+                                        <li><a class="js-anchor" href="#form">Заказать</a></li>
+                                        <li><a href="https://www.dctouch.ru/">Главный сайт</a></li>
+                                        <li><a class="js-anchor" href="#contacts">Контакты</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="slice s2" style="transform: translate3d(-90px, 0px, 0px);">
+                                <div class="menu">
+                                    <div class="content" style="display: none"><a href="https://www.dctouch.ru/" target="_blank"><img src="assets/images/dc-is.webp" alt="интерактивные системы" width="111" height="16"></a>
+                                        <ul>
+                                            <li class="active"><a href="#">#</a></li>
+                                            <li><a class="js-anchor" href="#installation">Разработка решений</a></li>
+                                            <li><a class="js-anchor" href="#museums">Музеи и выставки</a></li>
+                                            <li><a class="js-anchor" href="#arts">Арт контент</a></li>
+                                            <li><a class="js-anchor" href="#form">Заказать</a></li>
+                                            <li><a href="https://www.dctouch.ru/">Главный сайт</a></li>
+                                            <li><a class="js-anchor" href="#contacts">Контакты</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="slice s3" style="transform: translate3d(180px, 0px, 0px);"><a class="menu_button" id="menu_button" href="javascript:void(0)" onclick="javascript:MAIN_NAV.toggleMenu()" style="display: block"><span class="content"><img src="assets/images/logo.webp" alt="интерактивные системы dctouch" width="42">Меню</span></a></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -323,7 +342,13 @@
     <script src="assets/js/plugins/plugins.min.js"></script>
     <script src="assets/js/form.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/menu.js"></script>
     <!-- Scripts::End-->
+    <script>
+        var MAIN_NAV = new MainNav();
+        proto.registerInit(MAIN_NAV.init);
+        setCss($("#mainnav"), "overflow", "hidden");
+    </script>
 </body>
 
 </html>

@@ -12,7 +12,7 @@
     <!-- Yandex Map-->
 </head>
 
-<body>
+<body id="container">
     <div id="page">
         <div class="text-alert"></div>
         <div id="jump-to-menu"></div>
@@ -30,7 +30,13 @@
     <script src="assets/js/plugins/plugins.min.js"></script>
     <script src="assets/js/form.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/menu.js"></script>
     <!-- Scripts::End-->
+    <script>
+        var MAIN_NAV = new MainNav();
+        proto.registerInit(MAIN_NAV.init);
+        setCss($("#mainnav"), "overflow", "hidden");
+    </script>
 </body>
 
 </html>

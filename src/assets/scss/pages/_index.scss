@@ -9,7 +9,7 @@
     z-index: 50;
     cursor: pointer;
 
-    @include breakpoint(lg) {
+    @include breakpoint(xl) {
         position: fixed;
         top: calc(50% - 28px);
         left: 16px;
@@ -43,89 +43,272 @@ section {
     }
 }
 
-.menu {
+// .menu {
+//     display: none;
+
+//     @include breakpoint(xl) {
+//         padding-left: 0px;
+//         background: #fff;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         width: 80px;
+//         height: 100%;
+//         max-height: 100vh;
+//         transition: all .3s ease;
+//     }
+// }
+
+// .menu.active {
+
+//     @include breakpoint(xl) {
+//         padding-left: 30px;
+//         width: 280px;
+//     }
+// }
+
+// .menu-wrapper {
+//     display: flex;
+//     align-items: center;
+// }
+
+// .menu .menu-left {
+//     max-width: 0px;
+//     overflow: hidden;
+//     transition: all .5s ease;
+//     opacity: 0;
+// }
+
+// .menu.active .menu-left {
+//     width: 170px;
+//     max-width: 200px;
+//     opacity: 1;
+// }
+
+// .menu .label {
+//     margin-bottom: 20px;
+//     width: 110px;
+// }
+
+// .menu ul li ~ li {
+//     margin-top: 3px;
+// }
+
+// .menu ul li a {
+//     padding: 4px 0;
+//     font-size: 13px;
+//     line-height: 21px;
+//     color: #666;
+//     text-transform: uppercase;
+//     transition: color .15s linear;
+// }
+
+// .menu ul li a:hover {
+//     color: #231f1f;
+// }
+
+// .menu .menu-right {
+//     padding: 0 16px;
+//     text-align: center;
+//     cursor: pointer;
+// }
+
+// .menu .logo-img {
+//     width: 48px;
+// }
+
+// .menu .logo-text {
+//     margin-top: 15px;
+//     font-family: Arial;
+//     font-size: 12px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     text-transform: uppercase;
+//     color: #000;
+// }
+
+#mainnav {
+    background: #fff;
+    height: 100%;
+    z-index: 51;
+    min-height: 100px;
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    transition: width .35s linear;
+    max-height: 100vh;
+
+    @include breakpointMax(xl) {
+        display: none;
+    }
+}
+
+#mainnav .panel {
+    height: 100%;
+    position: relative;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    color: #fff;
+    width: 0
+}
+
+#mainnav .panel .slice {
+    width: 90px;
+    height: 100%;
+    background-color: #fff;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transition: background-color .3s linear;
+    -moz-transition: background-color .3s linear;
+    -o-transition: background-color .3s linear;
+    transition: background-color .3s linear
+}
+
+#mainnav .panel.closed .slice.s1,#mainnav .panel.closed .slice.s2,#mainnav .panel.closed .slice.s3 {
+    background-color: #fff
+}
+
+#mainnav .panel .slice.s3 {
+    width: 80px
+}
+
+#mainnav .panel .slice.s3 a {
+    width: 100%;
+    height: 100%;
     display: none;
-
-    @include breakpoint(xl) {
-        padding-left: 0px;
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 80px;
-        height: 100%;
-        max-height: 100vh;
-        transition: all .3s ease;
-    }
+    line-height: 12px;
+    text-decoration: none;
+    cursor: pointer
 }
 
-.menu.active {
+#mainnav .panel .slice.s3 a .content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    display: block;
 
-    @include breakpoint(xl) {
-        padding-left: 30px;
-        width: 280px;
-    }
-}
-
-.menu-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.menu .menu-left {
-    max-width: 0px;
-    overflow: hidden;
-    transition: all .5s ease;
-    opacity: 0;
-}
-
-.menu.active .menu-left {
-    width: 170px;
-    max-width: 200px;
-    opacity: 1;
-}
-
-.menu .label {
-    margin-bottom: 20px;
-    width: 110px;
-}
-
-.menu ul li ~ li {
-    margin-top: 3px;
-}
-
-.menu ul li a {
-    padding: 4px 0;
     font-size: 13px;
     line-height: 21px;
     color: #666;
     text-transform: uppercase;
-    transition: color .15s linear;
 }
 
-.menu ul li a:hover {
-    color: #231f1f;
-}
-
-.menu .menu-right {
-    padding: 0 16px;
+#mainnav .panel .slice.s3 a .content p {
+    opacity: .7;
+    line-height: 18px;
+    position: absolute;
+    left: 0;
+    width: 100%;
     text-align: center;
-    cursor: pointer;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out
 }
 
-.menu .logo-img {
-    width: 48px;
+#mainnav .panel.closed .slice.s3 a.intro .content p {
+    opacity: 0
 }
 
-.menu .logo-text {
-    margin-top: 15px;
-    font-family: Arial;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+#mainnav .panel .slice.s3 a .content img {
+    position: relative;
+    top: -23px;
+    -webkit-transition: .4s ease-in-out 0.3s;
+    -moz-transition: .2s ease-in-out 0.3s;
+    -o-transition: .2s ease-in-out 0.3s;
+    transition: .2s ease-in-out;
+    -transition-delay: 0.15s
+}
+
+html.ie7 #mainnav .panel .slice.s3 a .content p,html.ie8 #mainnav .panel .slice.s3 a .content p {
+    visibility: hidden
+}
+
+#mainnav.fallback .panel {
+    position: relative;
+    left: -180px
+}
+
+#mainnav.fallback .panel .slice {
+    background-color: #000
+}
+
+#mainnav.fallback .panel .slice.s2,#mainnav.fallback .panel .slice.s3 {
+    position: relative;
+    left: 90px
+}
+
+#mainnav .panel .slice .menu {
+    width: 90px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 45%
+}
+
+#mainnav .panel .slice .menu .content {
+    width: 135px;
+    margin: 35px 0 0 25px;
+    position: relative;
+    top: 0
+}
+
+#mainnav .panel .slice.s2 .menu .content {
+    left: -89px
+}
+
+#mainnav .panel .slice .menu .content ul {
+    margin-top: 30px;
+    margin-left: -35px;
+    padding-left: 40px;
+}
+
+#mainnav .panel .slice .menu .content ul li {
+    margin: 0;
+}
+
+#mainnav .panel .slice .menu .content ul li a {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: .1em;
     text-transform: uppercase;
-    color: #000;
+    text-decoration: none;
+    outline: 0;
+    color: #666;
+    -webkit-transition: color .15s linear;
+    -moz-transition: color .15s linear;
+    -o-transition: color .15s linear;
+    transition: color .15s linear;
+    cursor: pointer
+}
+
+#mainnav .panel .slice .menu .content ul li a.hover {
+    color: #231f1f;
+    text-decoration: none;
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s
+}
+
+#mainnav .panel .slice .menu .content ul li.active a {
+    color: #fff;
 }
 
 .wrapper {

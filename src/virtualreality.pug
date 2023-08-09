@@ -8,28 +8,79 @@ block main
 
     .wrapper.second-page
 
-        section#menu.menu
+        //- section#menu.menu
 
-            .menu-wrapper
+        //-     .menu-wrapper
 
-                .menu-left
+        //-         .menu-left
 
-                    .label
-                        a(href="https://www.dctouch.ru/")
-                            img(src="assets/images/dc-is.webp", alt="label")
+        //-             .label
+        //-                 a(href="https://www.dctouch.ru/")
+        //-                     img(src="assets/images/dc-is.webp", alt="label")
 
-                    ul
-                        li
-                            a(href="https://www.dctouch.ru/") Главный сайт
-                        li
-                            a.js-anchor(href="#form") Заказать
-                        li
-                            a.js-anchor(href="#contacts") Контакты
+        //-             ul
+        //-                 li
+        //-                     a(href="https://www.dctouch.ru/") Главный сайт
+        //-                 li
+        //-                     a.js-anchor(href="#form") Заказать
+        //-                 li
+        //-                     a.js-anchor(href="#contacts") Контакты
 
-                .menu-right#openMenu
-                    .logo-img
-                        img(src="assets/images/logo.webp", alt="logo")
-                    .logo-text меню
+        //-         .menu-right#openMenu
+        //-             .logo-img
+        //-                 img(src="assets/images/logo.webp", alt="logo")
+        //-             .logo-text меню
+
+        section#mainnav.nav__display(style="overflow: hidden; width: 80px;")
+            .panel.closed
+
+                .slice.s1(style="transform: translate3d(-90px, 0px, 0px);")
+                    .menu
+                        .content(style="display: none")
+                            a(href="https://www.dctouch.ru/" target="_blank")
+                                img(src="assets/images/dc-is.webp", alt="интерактивные системы" width="111" height="16")
+                            ul
+                                li.active
+                                    a(href="#") #
+                                li
+                                    a.js-anchor(href="#installation") Разработка решений
+                                li
+                                    a.js-anchor(href="#museums") Музеи и выставки
+                                li
+                                    a.js-anchor(href="#arts") Арт контент
+                                li
+                                    a.js-anchor(href="#form") Заказать
+                                li
+                                    a(href="https://www.dctouch.ru/") Главный сайт
+                                li
+                                    a.js-anchor(href="#contacts") Контакты
+
+                    .slice.s2(style="transform: translate3d(-90px, 0px, 0px);")
+                        .menu
+                            .content(style="display: none")
+                                a(href="https://www.dctouch.ru/" target="_blank")
+                                    img(src="assets/images/dc-is.webp", alt="интерактивные системы" width="111" height="16")
+                                ul
+                                    li.active
+                                        a(href="#") #
+                                    li
+                                        a.js-anchor(href="#installation") Разработка решений
+                                    li
+                                        a.js-anchor(href="#museums") Музеи и выставки
+                                    li
+                                        a.js-anchor(href="#arts") Арт контент
+                                    li
+                                        a.js-anchor(href="#form") Заказать
+                                    li
+                                        a(href="https://www.dctouch.ru/") Главный сайт
+                                    li
+                                        a.js-anchor(href="#contacts") Контакты
+
+                        .slice.s3(style="transform: translate3d(180px, 0px, 0px);")
+                            a#menu_button.menu_button(href="javascript:void(0)" onclick="javascript:MAIN_NAV.toggleMenu()" style="display: block")
+                                span.content
+                                    img(src="assets/images/logo.webp", alt="интерактивные системы dctouch" width="42")
+                                    |Меню
 
         section.section-first(style="background-image: url('assets/images/virtualreality/AVENUE_5.webp')")
             h1.main-title Разработка виртуальной реальности

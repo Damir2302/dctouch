@@ -15,7 +15,7 @@ html(lang="ru")
         if yandexMap == true
             script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
 
-    body(class= bodyClass ? bodyClass : '')
+    body#container(class= bodyClass ? bodyClass : '')
 
         #page
             .text-alert
@@ -34,3 +34,8 @@ html(lang="ru")
         // Scripts::Start
         include _loadScripts
         // Scripts::End
+
+        script.
+            var MAIN_NAV = new MainNav();
+            proto.registerInit(MAIN_NAV.init);
+            setCss($("#mainnav"), "overflow", "hidden");
